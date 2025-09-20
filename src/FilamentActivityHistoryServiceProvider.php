@@ -2,19 +2,19 @@
 
 namespace Nanorocks\FilamentActivityHistory;
 
-use Filament\Support\Assets\AlpineComponent;
-use Filament\Support\Assets\Asset;
-use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
-use Filament\Support\Facades\FilamentAsset;
-use Filament\Support\Facades\FilamentIcon;
+use Filament\Support\Assets\Css;
+use Filament\Support\Assets\Asset;
 use Illuminate\Filesystem\Filesystem;
-use Livewire\Features\SupportTesting\Testable;
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
+use Filament\Support\Facades\FilamentIcon;
+use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Assets\AlpineComponent;
+use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Nanorocks\FilamentActivityHistory\Commands\FilamentActivityHistoryCommand;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Nanorocks\FilamentActivityHistory\Testing\TestsFilamentActivityHistory;
+use Nanorocks\FilamentActivityHistory\Commands\FilamentActivityHistoryClearCommand;
 
 class FilamentActivityHistoryServiceProvider extends PackageServiceProvider
 {
@@ -112,7 +112,7 @@ class FilamentActivityHistoryServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            FilamentActivityHistoryCommand::class,
+            FilamentActivityHistoryClearCommand::class,
         ];
     }
 
